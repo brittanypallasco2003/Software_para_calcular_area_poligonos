@@ -20,7 +20,7 @@ public class Rectangulo extends Poligono {
 
     @Override
     public String toString() {
-        return "Rectángulo: " + super.toString() + "\nLado 1: " + lado1 + "\n Lado 2: " + lado2;
+        return "Rectángulo: " + super.toString() + "\nLado 1: " + lado1 + "\nLado 2: " + lado2;
     }
 
     @Override

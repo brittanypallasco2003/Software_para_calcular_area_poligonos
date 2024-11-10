@@ -2,12 +2,12 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class App {
-    static ArrayList<Poligono> poligono = new ArrayList<Poligono>();
+    static ArrayList<Poligono> poligonos = new ArrayList<Poligono>();
     static Scanner entrada = new Scanner(System.in);
 
     public static void main(String[] args) throws Exception {
         llenarPoligono();
-
+        mostrarDatos();
     }
 
     public static void llenarPoligono() {
@@ -25,7 +25,7 @@ public class App {
                     llenarTriangulo();
                     break;
                 case 2:
-
+                    llenarRectangulo();
                     break;
             }
             System.out.println("Desea introducir otro polígono(s/n): ");
@@ -43,7 +43,7 @@ public class App {
         System.out.println("Ingrese el valor del lado 3: ");
         lado3 = entrada.nextDouble();
 
-        poligono.add(new Triangulo(lado1, lado2, lado3));
+        poligonos.add(new Triangulo(lado1, lado2, lado3));
     }
 
     public static void llenarRectangulo() {
@@ -53,6 +53,14 @@ public class App {
         System.out.println("Ingrese el valor del lado 2: ");
         lado2 = entrada.nextDouble();
 
-        poligono.add(new Rectangulo(lado1, lado2));
+        poligonos.add(new Rectangulo(lado1, lado2));
+    }
+
+    public static void mostrarDatos() {
+        for (Poligono poligono : poligonos) {
+            System.out.println(poligono.toString());
+            System.out.println("Área: " + poligono.mostrarArea());
+            System.out.println();
+        }
     }
 }
