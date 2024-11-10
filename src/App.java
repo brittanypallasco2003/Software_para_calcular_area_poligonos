@@ -21,17 +21,38 @@ public class App {
             } while (opcion < 1 || opcion > 2);
 
             switch (opcion) {
-                // Llenar Triángulo
                 case 1:
-
+                    llenarTriangulo();
                     break;
-                // Llenar Rectángulo
                 case 2:
+
                     break;
             }
             System.out.println("Desea introducir otro polígono(s/n): ");
             respuesta = entrada.next().charAt(0);
             System.out.println();
         } while (respuesta == 's' || respuesta == 'S');
+    }
+
+    public static void llenarTriangulo() {
+        double lado1, lado2, lado3;
+        System.out.println("Ingrese el valor del lado 1: ");
+        lado1 = entrada.nextDouble();
+        System.out.println("Ingrese el valor del lado 2: ");
+        lado2 = entrada.nextDouble();
+        System.out.println("Ingrese el valor del lado 3: ");
+        lado3 = entrada.nextDouble();
+
+        poligono.add(new Triangulo(lado1, lado2, lado3));
+    }
+
+    public static void llenarRectangulo() {
+        double lado1, lado2;
+        System.out.println("Ingrese el valor del lado 1: ");
+        lado1 = entrada.nextDouble();
+        System.out.println("Ingrese el valor del lado 2: ");
+        lado2 = entrada.nextDouble();
+
+        poligono.add(new Rectangulo(lado1, lado2));
     }
 }
